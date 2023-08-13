@@ -1,3 +1,7 @@
+import satData from "./satData.js"
+
+
+
 const Table = ({ sat }) => {
   return (
       <table>
@@ -10,18 +14,23 @@ const Table = ({ sat }) => {
         </tr>
         </thead>
         <tbody>
-        <tr>
-          key = id
-          <td>{data.name}</td>
-          <td>{data.type}</td>
-          <td>{data.launchDate}</td>
-          <td>{if (data.operational= "true"){
-            
-          }}</td>
-        </tr>
-        </tbody>
+         
+          {sat.map( (data, id) => (
+              <tr key={id}>
+                <td>{data.name}</td>
+                <td>{data.type}</td>
+                <td>{data.launchDate}</td>
+                <td>{data.operational ?"Active" : "Inactive"}</td>
+                </tr>
+          )
+          )
+          }
+          </tbody>
       </table>
-  );
+
+  )
+ 
 };
+
 
 export default Table;

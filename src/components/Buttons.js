@@ -1,26 +1,51 @@
 import satData from "./satData.js"
 
-const Buttons = (props) => {
-  const { filterByType, setSat, displayStats } = props;
+const Buttons = ({ filterByType, setSat, displaySats }) => {
+  
   
   return (
     <div>
-      <button onClick={() => filterByType('')}> Filter xxx Sats</button>
-      <button onClick={() => displayStats()}>Display Sats</button>
       
-      {/* {displaySats.map((sat, id) => {
+      {displaySats.map((sat, id) => {
   return (
     <button onClick={() => filterByType(sat)} key={id}>
       {sat} Orbit
     </button>
   );
-})} */}
-//code continues
-      <button>Placeholder Button</button>
-      <button>All Orbits</button>
+})}
+
+      <button onClick={() => setSat(satData)}>All Orbits</button>
       </div>
   );
-  <button onClick={() => setSat()}>Set Sat</button>
+  
 };
+
+
+// const Buttons = (props) => {
+//   const { filterByType, setSat, displaySats } = props;
+  
+//   return (
+//     <div>
+//       <button onClick={() => filterByType('')}> Filter xxx Sats</button>
+//       <button onClick={() => displaySats()}>Display Sats</button>
+      
+//       {displaySats.map((sat, id) => {
+//   return (
+//     satData.map(sat => (
+//       <div key = {sat.id}>{"rendering logic"}</div>
+//     ))
+//   );
+//     <button onClick={() => filterByType(sat)} key={id}>
+//       {sat} Orbit
+//     </button>
+//       }
+//     )
+
+//      }
+//       <button>All Orbits</button>
+//       </div>
+//   );
+//   <button onClick={() => setSat()}>Set Sat</button>
+// };
 
 export default Buttons;
